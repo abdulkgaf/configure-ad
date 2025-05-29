@@ -58,6 +58,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
   - Subnet: default (10.0.0.0/24)
 - Click "Review + create" → "Create"
 
+![Screenshot 2025-05-28 113215](https://github.com/user-attachments/assets/2289f017-3e6a-444c-b527-bd5bf6d5faea)
+
 #### Set Domain Controller's NIC Private IP to Static
 - Navigate to DC-1 VM → Networking → Network Interface
 - Click on the Network Interface name
@@ -68,6 +70,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Click "Save"
 
 ### Step 2: Ensure Connectivity Between Client and Domain Controller
+
+![Screenshot 2025-05-28 113331](https://github.com/user-attachments/assets/76d02c42-d361-4a0e-be0e-740b929ffff3)
 
 #### Test Initial Connectivity
 - Remote Desktop into Client-1 using its public IP
@@ -92,6 +96,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Run `ping 10.0.0.4 -t` for continuous ping to verify consistent connectivity
 
 ### Step 3: Install Active Directory Domain Services
+
+![Screenshot 2025-05-28 114850](https://github.com/user-attachments/assets/0813cc0d-afbe-49d9-80af-0b7ba2993d46)
 
 #### Install AD DS Role on DC-1
 - On DC-1, open Server Manager (should open automatically)
@@ -136,6 +142,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 ### Step 4: Create Admin and Normal User Accounts in AD
 
+![Screenshot 2025-05-28 115257](https://github.com/user-attachments/assets/75d644a8-0ec7-45e0-97ab-829b63f52dbd)
+
 #### Create Organizational Units
 - On DC-1, open Server Manager
 - Click Tools → Active Directory Users and Computers
@@ -174,6 +182,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 ### Step 5: Join Client-1 to Domain
 
+![Screenshot 2025-05-28 122213](https://github.com/user-attachments/assets/b4c107e9-ee10-4193-8566-598e9d9c3463)
+
 #### Configure Client-1 DNS Settings
 - In Azure Portal, go to Client-1 → Networking
 - Click on the Network Interface
@@ -182,6 +192,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Add DC-1's private IP address (10.0.0.4)
 - Click "Save"
 - Restart Client-1 from Azure Portal
+
+![Screenshot 2025-05-28 122402](https://github.com/user-attachments/assets/7dc84c74-e06d-4398-bfc6-bb5def64bcc3)
 
 #### Join Client-1 to Domain
 - Remote Desktop into Client-1
@@ -199,6 +211,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 ### Step 6: Setup Remote Desktop for Non-Administrative Users
 
+![Screenshot 2025-05-28 122716](https://github.com/user-attachments/assets/45e8691f-9982-4ea2-940c-ee8741c50a9d)
+
 #### Configure Remote Desktop Access
 - Remote Desktop into Client-1
 - Login as: mydomain.com\jane_admin
@@ -210,6 +224,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Click "OK" → "OK"
 
 ### Step 7: Test Domain Functionality
+
+![Screenshot 2025-05-28 123216](https://github.com/user-attachments/assets/f4ed8066-a7d9-4469-b8da-bb96ac43e98d)
 
 #### Test User Login
 - Log out of Client-1
